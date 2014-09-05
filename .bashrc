@@ -1,68 +1,28 @@
-alias shark='ssh cbuckey@shark.ics.cs.cmu.edu'
-alias kcc='gcc -Wall -Wextra -ansi -pedantic -Werror'
-alias cc0ref='/afs/cs.cmu.edu/academic/class/15411-f11/bin/cc0'
-# export PATH=/usr/local/bin:$PATH:/Users/cbuckey/bin:/Applications/Octave.app/Contents/Resources/bin/
-export PATH=/usr/local/bin:$PATH:/usr/local/octave/3.8.0/bin:~/bin
-alias a='gls --color'
-export EDITOR=vim
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-# case "$TERM" in
-#     xterm-color) color_prompt=yes;;
-# esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-# force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # We have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt=yes
-    else
-    color_prompt=
-    fi  
-fi
-
 # Turn on git tab completion
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-if [ -f ~/.git-prompt.sh ]; then
-  source ~/.git-prompt.sh
-fi
-
-
-# if [ "$color_prompt" = yes ]; then
-#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;36m\]\H\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
-# else
-#     PS1='${debian_chroot:+($debian_chroot)}\H:\W\$ '
-# fi
-# unset color_prompt force_color_prompt
-# export PS1="\[\033[0;36m\]\h:\W \u\$ \[\033[0m\]"
-# export PS1="\[\033[0;36m\]\W \[\033[0;34m\]\u \[\033[0;35m\][\t]\$ \[\033[0m\]"
 export GIT_PS1_SHOWDIRTYSTATE=1
-# export PS1="\[\033[1;36m\]\w\[\033[1;34m\]\$(__git_ps1) \[\033[1;35m\][\A]\\n\[\033[0;36m\]$ \[\033[0m\]"
-# export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
-
-alias hidden='ls -a | grep "^\..*"'
-bind "set completion-ignore-case on"
-# ssh-add
-
+# Prevent duplicate lines from being added to bash history
+export HISTCONTROL=ignoredups
+export PYTHONPATH=/Users/cbuckey/courses/libraries/scikit-learn
+export HOMEBREW_GITHUB_API_TOKEN=51cd69725834e7cd29a8ab1a5167c2a26a2a4b45
+export PATH=/usr/local/bin:$PATH:/usr/local/octave/3.8.0/bin:~/bin
 export PATH=$PATH:/Users/quizqueen/Downloads/apktool-install-macosx-r05-ibot:/Library/Frameworks/Python.framework/Versions/3.3/bin
+export EDITOR=vim
 
+alias a='gls --color'
+alias hidden='ls -a | grep "^\..*"'
+
+bind "set completion-ignore-case on"
 # Prevents hidden files from being tab-completed unless the dot has already
 # been specified
 bind 'set match-hidden-files off'
 
-# Prevent duplicate lines from being added to bash history
-export HISTCONTROL=ignoredups
-
-export PYTHONPATH=/Users/cbuckey/courses/libraries/scikit-learn
+if [ -f ~/.git-prompt.sh ]; then
+  source ~/.git-prompt.sh
+fi
 
 # colors!
 cyan=$(tput setaf 33) 
