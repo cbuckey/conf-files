@@ -82,3 +82,6 @@ function smart_pwd {
 
 PROMPT_COMMAND="git_repo_colored; smart_pwd"
 export PS1='\[$blue\]$new_pwd\[$git_repo_status_color\]$(__git_ps1) \[$orange\][\A]$ \[$reset\]'
+
+# Pythonz - required for rainman
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
