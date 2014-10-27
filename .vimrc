@@ -34,8 +34,12 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
+" Make filetypes for json and txt
+au! BufRead,BufNewFile *.json set filetype=json 
+au! BufRead,BufNewFile *.txt set filetype=txt 
+
 " kill any trailing whitespace on save
-autocmd FileType c,cabal,cpp,haskell,javascript,php,python,readme,text
+autocmd FileType c,cabal,cpp,haskell,javascript,php,python,readme,text,json,txt
   \ autocmd BufWritePre <buffer>
   \ :call <SID>StripTrailingWhitespaces()
 
