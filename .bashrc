@@ -14,6 +14,7 @@ export EDITOR=vim
 
 alias a='gls --color'
 alias hidden='ls -a | grep "^\..*"'
+alias git_vis='git log --graph --all --oneline --decorate'
 
 bind "set completion-ignore-case on"
 # Prevents hidden files from being tab-completed unless the dot has already
