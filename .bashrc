@@ -16,6 +16,7 @@ alias a='gls --color'
 alias hidden='ls -a | grep "^\..*"'
 alias git_vis='git log --graph --all --oneline --decorate'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias chrome='open -a "Google Chrome"'
 
 bind "set completion-ignore-case on"
 # Prevents hidden files from being tab-completed unless the dot has already
